@@ -21,3 +21,6 @@ class UnitTestController(object):
     @property
     def model(self):
         return self._model
+
+    def run_all_tests(self):
+        pass

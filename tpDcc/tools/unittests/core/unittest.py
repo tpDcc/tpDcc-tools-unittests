@@ -76,11 +76,8 @@ class UnitTestToolsetWidget(toolset.ToolsetWidget, object):
 
         from tpDcc.tools.unittest.core import model, view, controller
 
-        unit_test_model = model.UnitTestModel(
-            config=self.CONFIG, names_config=self._names_config, naming_config=self._naming_config)
-        unit_test_controller = controller.UnitTestController(
-            naming_lib=self._naming_lib, client=self._client, model=unit_test_model)
-        unit_test_view = view.UnitTestView(
-            model=unit_test_model, controller=unit_test_controller, parent=self)
+        unit_test_model = model.UnitTestModel()
+        unit_test_controller = controller.UnitTestController(client=self._client, model=unit_test_model)
+        unit_test_view = view.UnitTestView(model=unit_test_model, controller=unit_test_controller, parent=self)
 
         return [unit_test_view]

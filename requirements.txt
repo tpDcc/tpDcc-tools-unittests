@@ -1,7 +1,7 @@
 # ===================================================================
-# tpDcc-tools-unittest requirements file
+# tpDcc-tools-unittests requirements file
 # ===================================================================
 tpDcc-libs-python
 tpDcc-core
 tpDcc-libs-qt
-# tpDcc-libs-unittest
+tpDcc-libs-unittests
