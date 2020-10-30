@@ -14,7 +14,7 @@ from Qt.QtCore import Qt, QModelIndex, QAbstractItemModel
 from tpDcc.managers import resources
 from tpDcc.libs.qt.core import qtutils
 
-from tpDcc.tools.unittest.core import consts
+from tpDcc.tools.unittests.core import consts
 
 
 class BaseUnitTestTreeModel(QAbstractItemModel, object):

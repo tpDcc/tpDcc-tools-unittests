@@ -11,11 +11,10 @@ from Qt.QtCore import Qt
 from Qt.QtWidgets import QSizePolicy, QMenuBar, QToolBar, QAction, QSplitter, QAbstractItemView
 
 from tpDcc import dcc
-from tpDcc.managers import resources
 from tpDcc.libs.qt.core import base
 from tpDcc.libs.qt.widgets import dividers, views
 
-from tpDcc.tools.unittest.widgets import console
+from tpDcc.tools.unittests.widgets import console
 
 
 class UnitTestView(base.BaseWidget, object):

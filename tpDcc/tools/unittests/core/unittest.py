@@ -13,7 +13,7 @@ import importlib
 from tpDcc import dcc
 from tpDcc.core import tool
 from tpDcc.libs.qt.widgets import toolset
-from tpDcc.tools.unittest.core import unittestclient
+from tpDcc.tools.unittests.core import unittestclient
 
 LOGGER = logging.getLogger('tpDcc-tools-unittest')
 
