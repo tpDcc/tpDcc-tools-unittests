@@ -15,28 +15,28 @@ from tpDcc.core import tool
 from tpDcc.libs.qt.widgets import toolset
 from tpDcc.tools.unittests.core import unittestclient
 
-LOGGER = logging.getLogger('tpDcc-tools-unittest')
+LOGGER = logging.getLogger('tpDcc-tools-unittests')
 
 # Defines ID of the tool
-TOOL_ID = 'tpDcc-tools-unittest'
+TOOL_ID = 'tpDcc-tools-unittests'
 
 
-class UnitTestTool(tool.DccTool, object):
+class UnitTestsTool(tool.DccTool, object):
     def __init__(self, *args, **kwargs):
-        super(UnitTestTool, self).__init__(*args, **kwargs)
+        super(UnitTestsTool, self).__init__(*args, **kwargs)
 
     @classmethod
     def config_dict(cls, file_name=None):
         base_tool_config = tool.DccTool.config_dict(file_name=file_name)
         tool_config = {
-            'name': 'Unit Test',
-            'id': 'tpDcc-tools-unittest',
+            'name': 'Unit Tests',
+            'id': TOOL_ID,
             'icon': 'unittest',
             'tooltip': 'Tool to execute unit tests inside DCCs.',
             'tags': ['tpDcc', 'dcc', 'tool', 'unit', 'test', 'unittest'],
             'is_checkable': False,
             'is_checked': False,
-            'menu_ui': {'label': 'Unit Test', 'load_on_startup': False, 'color': '', 'background_color': ''},
+            'menu_ui': {'label': 'Unit Tests', 'load_on_startup': False, 'color': '', 'background_color': ''},
         }
         base_tool_config.update(tool_config)
 
@@ -46,11 +46,11 @@ class UnitTestTool(tool.DccTool, object):
         return self.launch_frameless(*args, **kwargs)
 
 
-class UnitTestToolsetWidget(toolset.ToolsetWidget, object):
+class UnitTestsToolsetWidget(toolset.ToolsetWidget, object):
     ID = TOOL_ID
 
     def __init__(self, *args, **kwargs):
-        super(UnitTestToolsetWidget, self).__init__(*args, **kwargs)
+        super(UnitTestsToolsetWidget, self).__init__(*args, **kwargs)
 
     def setup_client(self):
 
@@ -74,7 +74,7 @@ class UnitTestToolsetWidget(toolset.ToolsetWidget, object):
 
     def contents(self):
 
-        from tpDcc.tools.unittest.core import model, view, controller
+        from tpDcc.tools.unittests.core import model, view, controller
 
         unit_test_model = model.UnitTestModel()
         unit_test_controller = controller.UnitTestController(client=self._client, model=unit_test_model)
