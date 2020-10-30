@@ -1,0 +1,3 @@
+include tpDcc/tools/unittest/__logging__.ini
+include versioneer.py
+include tpDcc/tools/unittest/_version.py
