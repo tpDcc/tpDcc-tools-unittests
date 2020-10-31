@@ -50,6 +50,11 @@ class UnitTestsToolsetWidget(toolset.ToolsetWidget, object):
     ID = TOOL_ID
 
     def __init__(self, *args, **kwargs):
+
+        self._unit_test_paths = kwargs.get('unit_test_paths', list())
+
+        self._unit_test_paths.extend([r'D:\tpDcc\tpDcc-libs-nameit\tests'])
+
         super(UnitTestsToolsetWidget, self).__init__(*args, **kwargs)
 
     def setup_client(self):
@@ -78,6 +83,7 @@ class UnitTestsToolsetWidget(toolset.ToolsetWidget, object):
 
         unit_test_model = model.UnitTestModel()
         unit_test_controller = controller.UnitTestController(client=self._client, model=unit_test_model)
-        unit_test_view = view.UnitTestView(model=unit_test_model, controller=unit_test_controller, parent=self)
+        unit_test_view = view.UnitTestView(
+            unit_test_paths=self._unit_test_paths, model=unit_test_model, controller=unit_test_controller, parent=self)
 
         return [unit_test_view]

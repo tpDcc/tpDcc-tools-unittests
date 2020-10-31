@@ -10,12 +10,12 @@ from __future__ import print_function, division, absolute_import
 from tpDcc.libs.python import python
 
 if python.is_python2():
-    from tpDcc.libs.python.enum import Enum
+    from tpDcc.libs.python.enum import IntEnum
 else:
-    from enum import Enum
+    from enum import IntEnum
 
 
-class UnitTestStatus(Enum):
+class UnitTestStatus(object):
 
     NOT_RUN = 0
     SUCCESS = 1

@@ -43,7 +43,7 @@ class Console(QTextEdit, object):
             self._controller.set_text_color(self.ERROR_COLOR)
         elif text.startswith('skipped'):
             self._controller.set_text_color(self.SKIP_COLOR)
-        self._controller.set_text(text)
+        self._controller.insert_text(text)
         self._controller.set_text_color(self.NORMAL_COLOR)
 
     def flush(self):
@@ -81,7 +81,7 @@ class ConsoleModel(QObject):
     def __init__(self):
         super(ConsoleModel, self).__init__()
 
-        self._text = 'HELLO FRIENDS'
+        self._text = ''
         self._text_color = Console.SUCCESS_COLOR
 
     @property
