@@ -7,12 +7,7 @@ Module that contains constant definitions for tpDcc-tools-unittest
 
 from __future__ import print_function, division, absolute_import
 
-from tpDcc.libs.python import python
-
-if python.is_python2():
-    from tpDcc.libs.python.enum import IntEnum
-else:
-    from enum import IntEnum
+TOOL_ID = 'tpDcc-tools-unittests'
 
 
 class UnitTestStatus(object):

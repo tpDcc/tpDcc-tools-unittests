@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 """
-Initialization module for tpDcc-tools-nameit
+Initialization module for tpDcc-tools-unittets
 """
 
 from __future__ import print_function, division, absolute_import
@@ -13,7 +13,7 @@ import logging.config
 
 def create_logger(dev=False):
     """
-    Creates logger for current tpDcc-tools-unittest package
+    Creates logger for current tpDcc-tools-unittests package
     """
 
     logger_directory = os.path.normpath(os.path.join(os.path.expanduser('~'), 'tpDcc', 'logs', 'tools'))
@@ -34,12 +34,3 @@ def create_logger(dev=False):
 
 
 create_logger()
-
-
-if __name__ == '__main__':
-    import tpDcc.loader
-    from tpDcc.managers import tools
-
-    tpDcc.loader.init(dev=False)
-
-    tools.ToolsManager().launch_tool_by_id('tpDcc-tools-unittest')
